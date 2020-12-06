@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "short_name": "React App",
+  "name": "Chrome Reddit Extension",
+  "description": "A Reddit extension for Google Chrome in React",
+  "version": "1.0.0",
+  "icons": {
+    "16": "favicon.ico",
+    "192": "logo192.png",
+    "512": "logo512.png"
+  },
+  "background": {
+    "scripts": ["./background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "js": ["./content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "options_page": "./options.html",
+  "browser_action": {
+    "default_icon": "favicon.ico",
+    "default_title": "Reddit Chrome Extension",
+    "default_popup": "./popup.html"
+  },
+  "permissions": ["activeTab"],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "web_accessible_resources": ["index.html", "/static/*"]
+}
