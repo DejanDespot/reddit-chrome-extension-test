@@ -1,6 +1,6 @@
 /* global chrome */
 
-console.log("Background is running");
+console.log("Background is runningggg");
 
 function buttonClicked(tab) {
   console.log(tab);

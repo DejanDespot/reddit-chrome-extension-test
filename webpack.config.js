@@ -11,7 +11,6 @@ module.exports = {
   entry: {
     popup: path.resolve(__dirname, "./src/index-popup.js"),
     options: path.resolve(__dirname, "./src/index-options.js"),
-    //foreground: path.resolve(__dirname, "./src/index-content.js"),
   },
   output: {
     filename: "[name].bundle.js",
@@ -53,16 +52,11 @@ module.exports = {
       template: "src/options.html",
       chunks: ["options"],
     }),
-    // new HtmlWebpackPlugin({
-    //   filename: "content.html",
-    //   template: "src/content.html",
-    //   chunks: ["foreground"],
-    // }),
     new CopyWebpackPlugin({
       patterns: [
         { from: "src/manifest.json", to: "[name].[ext]" },
         { from: "src/background.js", to: "[name].[ext]" },
-        //{ from: "src/inject_script.js", to: "[name].[ext]" },
+        { from: "src/content.js", to: "[name].[ext]" },
         { from: "src/*.png", to: "[name].[ext]" },
       ],
     }),
