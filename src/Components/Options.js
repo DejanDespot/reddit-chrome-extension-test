@@ -9,7 +9,6 @@ import {
   Redirect,
 } from "react-router-dom";
 import Popup from "./Popup";
-import Foreground from "./Foreground.js";
 
 const Options = () => {
   return (
@@ -34,9 +33,6 @@ const Options = () => {
         <Switch>
           <Route exact path="/popup">
             <Popup />
-          </Route>
-          <Route exact path="/foreground">
-            <Foreground />
           </Route>
           <Route exact path="/">
             <Redirect to="/options.html" />
