@@ -1,27 +1,21 @@
-/* global chrome */
-
 console.log("Background is runningggg");
 
-function buttonClicked(tab) {
-  console.log(tab);
-  chrome.tabs.sendMessage(tab.id, { message: "load" });
+let persistentURL = "";
+let articles = [];
 
-  const api_url = "https://www.reddit.com/r/Coronavirus/.rss";
+chrome.runtime.onMessage.addListener(request => {
+  console.log("REQ", request);
+  if (request.type === "persistUrl") {
+    if (request.data !== persistentURL) {
+      persistentURL = request.data;
+      console.log("url", persistentURL);
+    }
+  }
+});
 
-  // first attempt
-  const getData = async () => {
-    const response = await fetch(api_url);
-    const data = await response.text();
-
-    // console.log(data);
-
-    let parser = new DOMParser();
-    let xml = parser.parseFromString(data, "application/xml");
-
-    console.log(xml);
-  };
-
-  getData();
-}
-
-chrome.browserAction.onClicked.addListener(buttonClicked);
+chrome.runtime.onMessage.addListener(request => {
+  console.log("REQ", request);
+  if (request.type === "persistArticles") {
+    articles = request.data;
+  }
+});
