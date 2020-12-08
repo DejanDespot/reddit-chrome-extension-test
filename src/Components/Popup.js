@@ -103,10 +103,12 @@ const Popup = () => {
   return (
     <div style={styles.main}>
       <div style={styles.header}>
-        <img src={redditLogo} alt="logo" style={styles.logo} />
-        <Typography variant="h5" component="h5">
-          Reddit RSS Reader
-        </Typography>
+        <div style={styles.logoSection}>
+          <img src={redditLogo} alt="logo" style={styles.logo} />
+          <Typography variant="h5" component="h5">
+            Reddit RSS Reader
+          </Typography>
+        </div>
         <ReplayIcon onClick={requestInnerText} />
       </div>
       <div style={styles.container}>
@@ -165,6 +167,10 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between"
+  },
+  logoSection: {
+    display: "flex",
+    alignItems: "center"
   },
   logo: {
     height: "30px",
