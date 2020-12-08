@@ -4,8 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack-dev-server",
     "build:prod": "webpack --mode production"
   },
   "repository": {
@@ -13,7 +11,7 @@
     "url": "git+https://github.com/DejanDespot/reddit-chrome-extension-test.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dejan Despot",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DejanDespot/reddit-chrome-extension-test/issues"

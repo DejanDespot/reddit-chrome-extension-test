@@ -1,5 +1,3 @@
-const webpack = require("webpack");
-
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
@@ -54,15 +52,6 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    extensions: ["*", ".js"],
-
-    modules: ["./src", "./node_modules"],
-
-    alias: {
-
-    }
-  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: "popup.html",
@@ -81,11 +70,6 @@ module.exports = {
         { from: "src/content.js", to: "[name].[ext]" },
         { from: "src/*.png", to: "[name].[ext]" }
       ]
-    }),
-    new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify("production")
-      }
     }),
     new CleanWebpackPlugin()
   ]
