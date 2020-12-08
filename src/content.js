@@ -4,10 +4,10 @@ console.log("This is the content.js script running!");
 
 // eslint-disable-next-line
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.type === "requestUrl") {
-    sendResponse(window.location.href);
+  if (request.type === "requestInnerText") {
+    let words = document.body.innerText;
+    sendResponse(words);
   }
-  //main();
 });
 
 function main() {

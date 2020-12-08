@@ -6,7 +6,7 @@ import {
   Switch,
   Route,
   Link,
-  Redirect,
+  Redirect
 } from "react-router-dom";
 import Popup from "./Popup";
 
@@ -14,18 +14,12 @@ const Options = () => {
   return (
     <Router>
       <div style={styles.container}>
-        <div style={styles.nav_bar}>
-          <h1>Chrome Ext - Options</h1>
+        <div>
+          <h1>Dejan Despot - Reddit RSS Reader</h1>
           <nav>
             <ul>
               <li>
-                <Link to="/">Options</Link>
-              </li>
-              <li>
-                <Link to="/popup">Popup</Link>
-              </li>
-              <li>
-                <Link to="/foreground">Foreground</Link>
+                <Link to="/popup">Try the popup !</Link>
               </li>
             </ul>
           </nav>
@@ -47,7 +41,7 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    alignItems: "center",
-  },
+    alignItems: "center"
+  }
 };
 export default Options;
